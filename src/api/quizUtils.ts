@@ -9,7 +9,7 @@ const getQuestion = async (quantity: number, level: string): Promise<QuestionTyp
         return {
             question: quizObject.question,
             answer: quizObject.correct_answer,
-            option: quizObject.incorrect_answers.concat(quizObject.correct_answer)
+            option: suffleArray(quizObject.incorrect_answers.concat(quizObject.correct_answer))
         }
     })
     return quiz
